@@ -14,14 +14,7 @@ const experiences = [
     color: 'from-primary-600 to-primary-400',
     icon: '💼',
     current: true,
-    responsibilities: [
-      'Leading full-stack development of scalable web applications using MERN stack',
-      'Designing and implementing RESTful APIs and database schemas',
-      'Building responsive, accessible UIs with React.js and Tailwind CSS',
-      'Implementing testing strategies including unit tests and integration tests',
-      'Collaborating with design team to deliver pixel-perfect, user-centered products',
-    ],
-    tech: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    tech: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS', 'React Native','Detox'],
   },
   {
     id: 2,
@@ -34,14 +27,7 @@ const experiences = [
     color: 'from-primary-500 to-primary-700',
     icon: '🚀',
     current: false,
-    responsibilities: [
-      'Collaborated with the development team on real-world web application projects',
-      'Worked on frontend development using React.js and modern CSS frameworks',
-      'Participated in code reviews, daily standups, and agile development cycles',
-      'Assisted in backend development with Node.js and Express.js',
-      'Gained hands-on experience with deployment pipelines and version control',
-    ],
-    tech: ['React.js', 'Node.js', 'JavaScript', 'Git', 'MongoDB'],
+    tech: ['React.js', 'Node.js', 'JavaScript', 'Git', 'MongoDB', 'UI/UX design','Q&A Testing'],
   },
 ];
 
@@ -96,7 +82,7 @@ export default function Experience() {
                     <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs">
                       <Calendar size={10} /> May 2025 – Present
                     </span>
-                    <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs text-white">
+                    <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs text-">
                       <Zap size={10} /> Intern → Full Stack Dev
                     </span>
                   </div>
@@ -157,14 +143,16 @@ export default function Experience() {
                         </div>
 
                         {/* Responsibilities */}
-                        <ul className="space-y-2 mb-6">
-                          {exp.responsibilities.map((resp, i) => (
-                            <li key={i} className="flex items-start gap-2 text-brand-dark text-sm">
-                              <ArrowRight size={14} className="text-primary-400 flex-shrink-0 mt-0.5" />
-                              {resp}
-                            </li>
-                          ))}
-                        </ul>
+                        {exp.responsibilities && exp.responsibilities.length > 0 && (
+                          <ul className="space-y-2 mb-6">
+                            {exp.responsibilities.map((resp, i) => (
+                              <li key={i} className="flex items-start gap-2 text-brand-dark text-sm">
+                                <ArrowRight size={14} className="text-primary-400 flex-shrink-0 mt-0.5" />
+                                {resp}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
 
                         {/* Tech stack */}
                         <div className="flex flex-wrap gap-2">
