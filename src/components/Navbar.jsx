@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
     { path: '/', label: 'Home' },
@@ -14,7 +13,6 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const { isDark, toggleTheme } = useTheme();
     const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -50,8 +48,8 @@ export default function Navbar() {
                             key={path}
                             to={path}
                             className={`nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${location.pathname === path
-                                ? 'text-primary-500 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40'
-                                : 'text-brand-dark/70 dark:text-brand-light/70 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950/20'
+                                ? 'text-primary-500 bg-primary-50'
+                                : 'text-brand-dark/70 hover:text-primary-500 hover:bg-primary-50'
                                 }`}
                         >
                             {label}
@@ -64,23 +62,10 @@ export default function Navbar() {
 
                 {/* Right Controls */}
                 <div className="flex items-center gap-3">
-                    {/* Theme Toggle */}
-                    <button
-                        onClick={toggleTheme}
-                        className="relative w-10 h-10 rounded-xl glass flex items-center justify-center text-brand-dark/70 dark:text-brand-light/70 hover:text-primary-500 dark:hover:text-primary-400 transition-all duration-300 hover:scale-110"
-                        aria-label="Toggle theme"
-                    >
-                        {isDark ? (
-                            <Sun size={18} className="text-yellow-400" />
-                        ) : (
-                            <Moon size={18} className="text-primary-500" />
-                        )}
-                    </button>
-
                     {/* Mobile Menu */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center text-brand-dark/70 dark:text-brand-light/70 transition-all duration-300"
+                        className="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center text-brand-dark/70 transition-all duration-300"
                     >
                         {mobileOpen ? <X size={18} /> : <Menu size={18} />}
                     </button>
@@ -89,14 +74,14 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {mobileOpen && (
-                <div className="lg:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden border border-white/20 dark:border-white/10 shadow-xl">
+                <div className="lg:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden border border-white/20 shadow-xl">
                     {navLinks.map(({ path, label }) => (
                         <Link
                             key={path}
                             to={path}
                             className={`block px-6 py-3 text-sm font-medium transition-all duration-200 ${location.pathname === path
-                                ? 'text-primary-500 bg-primary-50 dark:bg-primary-950/40'
-                                : 'text-brand-dark dark:text-brand-light/60 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-950/20'
+                                ? 'text-primary-500 bg-primary-50'
+                                : 'text-brand-dark hover:text-primary-500 hover:bg-primary-50'
                                 }`}
                         >
                             {label}

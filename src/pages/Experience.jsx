@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, MapPin, Calendar, ArrowRight, Zap } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 const experiences = [
   {
@@ -60,10 +59,8 @@ function AnimatedSection({ children, delay = 0, className = '' }) {
 }
 
 export default function Experience() {
-  const { isDark } = useTheme();
-
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-mesh-dark' : 'bg-mesh-light'}`}>
+    <div className="min-h-screen bg-mesh-light">
       <div className="orb orb-purple w-80 h-80 top-20 right-0" />
       <div className="orb orb-cyan w-64 h-64 bottom-20 left-0" />
 
@@ -72,7 +69,7 @@ export default function Experience() {
           {/* Header */}
           <AnimatedSection>
             <div className="text-center mb-16">
-              <span className="tag bg-primary-50 dark:bg-primary-950/50 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-900 mb-4">
+              <span className="tag bg-primary-50 text-primary-600 border border-primary-100 mb-4">
                 <Briefcase size={12} /> Experience
               </span>
               <h2 className="section-title gradient-text mt-3">Work Experience</h2>
@@ -84,22 +81,22 @@ export default function Experience() {
 
           {/* Company Banner */}
           <AnimatedSection delay={100}>
-            <div className="glass rounded-3xl p-6 border border-white/20 dark:border-white/10 shadow-xl mb-12 card-shine">
+            <div className="glass rounded-3xl p-6 border border-white/20 shadow-xl mb-12 card-shine">
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <div className="w-20 h-20 rounded-2xl bg-primary-500 flex items-center justify-center text-3xl shadow-lg shadow-primary-500/30 flex-shrink-0 text-white">
                   ⚡
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <h3 className="font-display font-black text-2xl text-primary-500 dark:text-brand-light">Zenbeta Technologies</h3>
-                  <p className="text-brand-dark dark:text-brand-light/50 mt-1">Software Development Company</p>
+                  <h3 className="font-display font-black text-2xl text-primary-500">Zenbeta Technologies</h3>
+                  <p className="text-brand-dark mt-1">Software Development Company</p>
                   <div className="flex flex-wrap justify-center sm:justify-start gap-3 mt-3">
-                    <span className="tag bg-primary-50 dark:bg-primary-950/30 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 text-xs">
+                    <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs">
                       <MapPin size={10} /> Onsite, Hyderabad
                     </span>
-                    <span className="tag bg-primary-50 dark:bg-primary-950/30 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 text-xs">
+                    <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs">
                       <Calendar size={10} /> May 2025 – Present
                     </span>
-                    <span className="tag bg-primary-50 dark:bg-primary-950/30 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 text-xs text-white">
+                    <span className="tag bg-primary-50 text-primary-600 border border-primary-200 text-xs text-white">
                       <Zap size={10} /> Intern → Full Stack Dev
                     </span>
                   </div>
@@ -123,7 +120,7 @@ export default function Experience() {
                     </div>
 
                     {/* Card */}
-                    <div className={`glass rounded-3xl border border-white/20 dark:border-white/10 shadow-xl overflow-hidden card-shine ${exp.current ? 'ring-2 ring-accent-400/40' : ''}`}>
+                    <div className={`glass rounded-3xl border border-white/20 shadow-xl overflow-hidden card-shine ${exp.current ? 'ring-2 ring-accent-400/40' : ''}`}>
                       {/* Current badge */}
                       {exp.current && (
                         <div className="bg-primary-500 px-4 py-1.5 flex items-center gap-2">
@@ -138,31 +135,31 @@ export default function Experience() {
                           <div>
                             <div className="flex items-center gap-2 mb-1">
                               <span className="text-2xl md:hidden">{exp.icon}</span>
-                              <h3 className="font-display font-bold text-xl md:text-2xl text-primary-500 dark:text-brand-light">
+                              <h3 className="font-display font-bold text-xl md:text-2xl text-primary-500">
                                 {exp.role}
                               </h3>
                             </div>
-                            <p className="text-brand-dark dark:text-primary-400 font-semibold">{exp.company}</p>
+                            <p className="text-brand-dark font-semibold">{exp.company}</p>
                           </div>
                           <div className="flex flex-wrap gap-2">
                             <span className={`tag text-xs bg-gradient-to-r ${exp.color} text-white`}>{exp.type}</span>
-                            <span className="tag bg-brand-light/50 dark:bg-brand-dark/50 text-brand-dark dark:text-brand-light/60 text-xs">
+                            <span className="tag bg-brand-light/50 text-brand-dark text-xs">
                               <MapPin size={10} /> {exp.mode}
                             </span>
                           </div>
                         </div>
 
                         {/* Period */}
-                        <div className="flex items-center gap-2 mb-5 text-brand-dark/50 dark:text-brand-light/50 text-sm">
+                        <div className="flex items-center gap-2 mb-5 text-brand-dark/50 text-sm">
                           <Calendar size={14} />
                           <span className="font-medium">{exp.period}</span>
-                          <span className="px-2 py-0.5 rounded-md bg-brand-light/50 dark:bg-brand-dark/50 text-xs">{exp.duration}</span>
+                          <span className="px-2 py-0.5 rounded-md bg-brand-light/50 text-xs">{exp.duration}</span>
                         </div>
 
                         {/* Responsibilities */}
                         <ul className="space-y-2 mb-6">
                           {exp.responsibilities.map((resp, i) => (
-                            <li key={i} className="flex items-start gap-2 text-brand-dark dark:text-brand-light/60 text-sm">
+                            <li key={i} className="flex items-start gap-2 text-brand-dark text-sm">
                               <ArrowRight size={14} className="text-primary-400 flex-shrink-0 mt-0.5" />
                               {resp}
                             </li>
@@ -172,7 +169,7 @@ export default function Experience() {
                         {/* Tech stack */}
                         <div className="flex flex-wrap gap-2">
                           {exp.tech.map((t) => (
-                            <span key={t} className="px-3 py-1 rounded-lg bg-primary-50 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 text-xs font-medium">
+                            <span key={t} className="px-3 py-1 rounded-lg bg-primary-50 text-primary-600 border border-primary-200 text-xs font-medium">
                               {t}
                             </span>
                           ))}

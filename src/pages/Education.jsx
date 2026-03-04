@@ -3,7 +3,6 @@ import { useInView } from 'react-intersection-observer';
 import { GraduationCap, Award } from 'lucide-react';
 import { educationData } from '../data/education';
 import CertificateModal from '../components/CertificateModal';
-import { useTheme } from '../context/ThemeContext';
 
 function AnimatedSection({ children, delay = 0, className = '' }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -19,7 +18,6 @@ function AnimatedSection({ children, delay = 0, className = '' }) {
 }
 
 export default function Education() {
-  const { isDark } = useTheme();
   const [activeCert, setActiveCert] = useState(null);
 
   const openCertModal = (edu) => {
@@ -35,7 +33,7 @@ export default function Education() {
   };
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-mesh-dark' : 'bg-mesh-light'}`}>
+    <div className="min-h-screen bg-mesh-light">
       <div className="orb orb-purple w-80 h-80 top-20 -right-20" />
       <div className="orb orb-pink w-64 h-64 bottom-20 -left-10" />
 

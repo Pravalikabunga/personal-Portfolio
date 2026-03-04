@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Code2, Smartphone, Palette, TestTube, Zap, Globe } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 const roles = [
   { icon: Globe, label: 'Full Stack Developer', color: 'from-primary-600 to-primary-400', desc: 'Building end-to-end web applications with modern frameworks' },
@@ -23,10 +22,8 @@ function AnimatedSection({ children, className = '' }) {
 }
 
 export default function About() {
-  const { isDark } = useTheme();
-
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-mesh-dark' : 'bg-mesh-light'}`}>
+    <div className="min-h-screen bg-mesh-light">
       {/* Orbs */}
       <div className="orb orb-purple w-96 h-96 top-10 -left-20" />
       <div className="orb orb-cyan w-64 h-64 bottom-10 right-10" />
@@ -36,11 +33,11 @@ export default function About() {
           {/* Header */}
           <AnimatedSection>
             <div className="text-center mb-16">
-              <span className="tag bg-primary-100 dark:bg-primary-950/50 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 mb-4">
+              <span className="tag bg-primary-100 text-primary-600 border border-primary-200 mb-4">
                 <Zap size={12} /> About Me
               </span>
               <h2 className="section-title gradient-text mt-3">Who Am I?</h2>
-              <p className="section-subtitle mx-auto text-center text-brand-dark dark:text-brand-light/60">
+              <p className="section-subtitle mx-auto text-center text-brand-dark">
                 Passionate developer & designer turning ideas into reality
               </p>
             </div>
@@ -51,13 +48,13 @@ export default function About() {
             <AnimatedSection>
               <div className="relative">
                 {/* Main card */}
-                <div className="glass rounded-3xl p-8 border border-white/20 dark:border-white/10 shadow-2xl card-shine">
+                <div className="glass rounded-3xl p-8 border border-white/20 shadow-2xl card-shine">
                   {/* Avatar */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-primary-200 dark:border-primary-800">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-primary-200">
                         <img
-                          src={isDark ? '/assets/profile-dark.png' : '/assets/profile-light.png'}
+                          src='/assets/profile-light.png'
                           alt="Pravalika"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
@@ -69,11 +66,11 @@ export default function About() {
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary-500 rounded-full border-2 border-[var(--bg-primary)]" />
                     </div>
                     <div>
-                      <h3 className="font-display font-bold text-xl text-primary-500 dark:text-brand-light">Pravalika</h3>
-                      <p className="text-sm text-brand-dark dark:text-brand-light/50">Full Stack Developer & Designer</p>
+                      <h3 className="font-display font-bold text-xl text-primary-500">Pravalika</h3>
+                      <p className="text-sm text-brand-dark">Full Stack Developer & Designer</p>
                       <div className="flex items-center gap-1 mt-1">
                         <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-                        <span className="text-xs text-brand-dark dark:text-brand-light/50 font-medium">Available for opportunities</span>
+                        <span className="text-xs text-brand-dark font-medium">Available for opportunities</span>
                       </div>
                     </div>
                   </div>
@@ -86,26 +83,26 @@ export default function About() {
                       { label: 'Degree', value: 'B.Tech AI & DS', icon: '🎓' },
                       { label: 'Focus', value: 'Full Stack & UX', icon: '🎯' },
                     ].map(({ label, value, icon }) => (
-                      <div key={label} className="bg-brand-light/5 dark:bg-brand-dark/50 rounded-xl p-3 border border-primary-500/5 transition-colors">
+                      <div key={label} className="bg-brand-light/5 rounded-xl p-3 border border-primary-500/5 transition-colors">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-base">{icon}</span>
-                          <span className="text-xs text-brand-dark dark:text-brand-light/40 font-medium uppercase tracking-wider">{label}</span>
+                          <span className="text-xs text-brand-dark font-medium uppercase tracking-wider">{label}</span>
                         </div>
-                        <p className="text-sm font-semibold text-primary-500 dark:text-brand-light">{value}</p>
+                        <p className="text-sm font-semibold text-primary-500">{value}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Floating accent card */}
-                <div className="absolute -bottom-6 -right-6 glass rounded-2xl px-4 py-3 shadow-xl border border-white/20 dark:border-white/10 animate-float">
+                <div className="absolute -bottom-6 -right-6 glass rounded-2xl px-4 py-3 shadow-xl border border-white/20 animate-float">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
                       <Code2 size={14} className="text-white" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-brand-dark/70 dark:text-brand-light/70 transition-colors">Open Source</p>
-                      <p className="text-xs text-brand-dark/40 dark:text-brand-light/40 transition-colors">Contributing & Building</p>
+                      <p className="text-xs font-bold text-brand-dark/70 transition-colors">Open Source</p>
+                      <p className="text-xs text-brand-dark/40 transition-colors">Contributing & Building</p>
                     </div>
                   </div>
                 </div>
@@ -115,11 +112,11 @@ export default function About() {
             {/* Text Side */}
             <AnimatedSection>
               <div className="space-y-6">
-                <h3 className="font-display font-bold text-3xl text-primary-500 dark:text-brand-light">
+                <h3 className="font-display font-bold text-3xl text-primary-500">
                   Crafting Digital Experiences with
                   <span className="gradient-text"> Passion & Precision</span>
                 </h3>
-                <p className="text-brand-dark dark:text-brand-light/60 leading-relaxed text-lg">
+                <p className="text-brand-dark leading-relaxed text-lg">
                   Aspiring Full Stack Web Developer, App Developer, UI/UX Designer, and Manual & Automation Tester
                   with hands-on internship experience in software development and design.
                 </p>
@@ -138,7 +135,7 @@ export default function About() {
                   {['React.js', 'Node.js', 'Python', 'Figma', 'MongoDB', 'React Native'].map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-lg text-sm font-medium bg-primary-50 dark:bg-primary-950/50 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800"
+                      className="px-3 py-1.5 rounded-lg text-sm font-medium bg-primary-50 text-primary-600 border border-primary-200"
                     >
                       {skill}
                     </span>
@@ -152,12 +149,12 @@ export default function About() {
           <AnimatedSection>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {roles.map(({ icon: Icon, label, color, desc }) => (
-                <div key={label} className="glass rounded-2xl p-6 border border-white/20 dark:border-white/10 card-shine card-hover-3d group text-center">
+                <div key={label} className="glass rounded-2xl p-6 border border-white/20 card-shine card-hover-3d group text-center">
                   <div className={`w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <Icon size={24} className="text-white" />
                   </div>
-                  <h4 className="font-display font-bold text-base text-primary-500 dark:text-brand-light mb-2">{label}</h4>
-                  <p className="text-xs text-brand-dark dark:text-brand-light/50 leading-relaxed">{desc}</p>
+                  <h4 className="font-display font-bold text-base text-primary-500 mb-2">{label}</h4>
+                  <p className="text-xs text-brand-dark leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>

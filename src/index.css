@@ -12,15 +12,6 @@
     --card-bg: rgba(255, 248, 240, 0.7);
   }
 
-  .dark {
-    --bg-primary: #1e1e24;
-    --bg-secondary: #16161c;
-    --text-primary: #fff8f0;
-    --text-secondary: #92140c;
-    --border: #2d2d35;
-    --card-bg: rgba(30, 30, 36, 0.7);
-  }
-
   * {
     @apply scroll-smooth;
   }
@@ -51,7 +42,7 @@
 
 @layer components {
   .glass {
-    @apply backdrop-blur-md border border-primary-500/10 dark:border-white/5;
+    @apply backdrop-blur-md border border-primary-500/10;
     background: var(--card-bg);
   }
 
@@ -337,7 +328,7 @@
 }
 
 .bento-card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/20 dark:border-white/5 shadow-2xl transition-all duration-500;
+  @apply relative overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl transition-all duration-500;
   background: var(--card-bg);
   backdrop-filter: blur(20px);
 }
