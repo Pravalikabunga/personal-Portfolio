@@ -33,11 +33,11 @@ export default function Education() {
   };
 
   return (
-    <div className="min-h-screen bg-mesh-light">
+    <div className="bg-mesh-light">
       <div className="orb orb-purple w-80 h-80 top-20 -right-20" />
       <div className="orb orb-pink w-64 h-64 bottom-20 -left-10" />
 
-      <div className="relative z-10 section-padding pt-32">
+      <div className="relative z-10 section-padding pt-20 sm:pt-24 md:pt-32">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <AnimatedSection>
@@ -65,11 +65,15 @@ export default function Education() {
                     <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 z-10 rounded-full bg-primary-500 items-center justify-center shadow-lg text-xl text-white">
                       {edu.icon}
                     </div>
+                    {/* Mobile center dot */}
+                    <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 z-10 rounded-full bg-primary-500 items-center justify-center shadow-lg text-xs text-white">
+                      {edu.icon}
+                    </div>
 
                     {/* Card */}
                     <div className="w-full md:w-[46%]">
                       <div
-                        className="glass rounded-3xl p-6 border border-white/20 dark:border-white/10 shadow-xl card-shine card-hover-3d cursor-pointer group glow-border"
+                        className="glass rounded-3xl p-6 border border-white/20 dark:border-white/10 shadow-xl card-shine card-hover-3d cursor-pointer group"
                         onClick={() => openCertModal(edu)}
                         role="button"
                         tabIndex={0}
@@ -122,8 +126,6 @@ export default function Education() {
                         {/* Description */}
                         <p className="text-xs text-brand-dark dark:text-brand-light/40 mt-3 leading-relaxed">{edu.description}</p>
 
-                        {/* Hover overlay */}
-                        <div className="absolute inset-0 rounded-3xl bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                       </div>
                     </div>
 

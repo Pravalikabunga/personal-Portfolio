@@ -11,7 +11,7 @@ export const educationData = [
     icon: "🎓",
     color: "from-primary-500 to-primary-700",
     hasCertificate: true,
-    certificateFile: "btech_certificate.jpg",
+    certificateFile: "OD.jpg",
     description: "Specialized in AI & Data Science with focus on machine learning, data structures, and full-stack development."
   },
   {
@@ -26,7 +26,7 @@ export const educationData = [
     icon: "📚",
     color: "from-primary-400 to-primary-600",
     hasCertificate: true,
-    certificateFile: "intermediate_certificate.jpg",
+    certificateFile: "Intermediate_Long_Memo.jpg",
     description: "Completed intermediate education with focus on Mathematics, Physics, and Chemistry."
   },
   {
@@ -41,7 +41,7 @@ export const educationData = [
     icon: "🏫",
     color: "from-primary-600 to-primary-800",
     hasCertificate: true,
-    certificateFile: "ssc_certificate.jpg",
+    certificateFile: "SSC_Long_Memo.jpg",
     description: "Completed secondary education with distinction in Science and Mathematics."
   }
 ];

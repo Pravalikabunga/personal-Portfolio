@@ -26,7 +26,7 @@ export default function Navbar() {
     useEffect(() => setMobileOpen(false), [location]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        <nav className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled
             ? 'glass shadow-lg shadow-primary-500/10 py-3'
             : 'bg-transparent py-5'
             }`}>
@@ -65,7 +65,8 @@ export default function Navbar() {
                     {/* Mobile Menu */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center text-brand-dark/70 transition-all duration-300"
+                        className="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center text-brand-dark/70 dark:text-brand-light/70 transition-all duration-200 hover:text-primary-500 hover:scale-110"
+                        style={{ zIndex: 9999 }}
                     >
                         {mobileOpen ? <X size={18} /> : <Menu size={18} />}
                     </button>

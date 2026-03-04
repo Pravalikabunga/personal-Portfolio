@@ -29,10 +29,10 @@ export default function About() {
       <div className="orb orb-cyan w-64 h-64 bottom-10 right-10" />
 
       <div className="relative z-10 section-padding pt-32">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 sm:mb-16">
               <span className="tag bg-primary-100 text-primary-600 border border-primary-200 mb-4">
                 <Zap size={12} /> About Me
               </span>
@@ -43,16 +43,16 @@ export default function About() {
             </div>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-12 sm:mb-16 md:mb-20">
             {/* Visual Side */}
             <AnimatedSection>
               <div className="relative">
                 {/* Main card */}
-                <div className="glass rounded-3xl p-8 border border-white/20 shadow-2xl card-shine">
+                <div className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20 shadow-lg sm:shadow-xl md:shadow-2xl card-shine">
                   {/* Avatar */}
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                     <div className="relative">
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-primary-200">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-primary-200">
                         <img
                           src='/assets/profile-light.png'
                           alt="Pravalika"
@@ -63,7 +63,7 @@ export default function About() {
                           <span className="text-white font-bold text-2xl font-display">P</span>
                         </div>
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary-500 rounded-full border-2 border-[var(--bg-primary)]" />
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-primary-500 rounded-full border-2 border-[var(--bg-primary)]" />
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-xl text-primary-500">Pravalika</h3>
@@ -76,14 +76,14 @@ export default function About() {
                   </div>
 
                   {/* Info grid */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     {[
                       { label: 'Location', value: 'Hyderabad, India', icon: '📍' },
                       { label: 'Experience', value: '1+ Years', icon: '💼' },
                       { label: 'Degree', value: 'B.Tech AI & DS', icon: '🎓' },
                       { label: 'Focus', value: 'Full Stack & UX', icon: '🎯' },
                     ].map(({ label, value, icon }) => (
-                      <div key={label} className="bg-brand-light/5 rounded-xl p-3 border border-primary-500/5 transition-colors">
+                      <div key={label} className="bg-brand-light/5 rounded-lg sm:rounded-xl p-2 sm:p-3 border border-primary-500/5 transition-colors">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-base">{icon}</span>
                           <span className="text-xs text-brand-dark font-medium uppercase tracking-wider">{label}</span>
@@ -95,10 +95,10 @@ export default function About() {
                 </div>
 
                 {/* Floating accent card */}
-                <div className="absolute -bottom-6 -right-6 glass rounded-2xl px-4 py-3 shadow-xl border border-white/20 animate-float">
+                <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 md:-bottom-6 md:-right-6 glass rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 md:px-4 md:py-3 shadow-xl border border-white/20 animate-float">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                      <Code2 size={14} className="text-white" />
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                      <Code2 size={12} className="sm:size-13 md:size-14 text-white" />
                     </div>
                     <div>
                       <p className="text-xs font-bold text-brand-dark/70 transition-colors">Open Source</p>
@@ -147,11 +147,11 @@ export default function About() {
 
           {/* Role Cards */}
           <AnimatedSection>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
               {roles.map(({ icon: Icon, label, color, desc }) => (
-                <div key={label} className="glass rounded-2xl p-6 border border-white/20 card-shine card-hover-3d group text-center">
-                  <div className={`w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon size={24} className="text-white" />
+                <div key={label} className="glass rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 card-shine card-hover-3d group text-center">
+                  <div className={`w-12 h-12 sm:w-13 sm:h-13 md:w-14 md:h-14 mx-auto mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon size={20} className="sm:size-22 md:size-24 text-white" />
                   </div>
                   <h4 className="font-display font-bold text-base text-primary-500 mb-2">{label}</h4>
                   <p className="text-xs text-brand-dark leading-relaxed">{desc}</p>
