@@ -1,0 +1,50 @@
+export const projectsData = [
+  {
+    id: 1,
+    title: "To-Do App",
+    category: "Application",
+    categoryIcon: "📱",
+    categoryColor: "from-primary-500 to-primary-700",
+    description: "A feature-rich To-Do application with task management, priority settings, due dates, and local storage persistence. Built with a focus on clean UI and smooth user experience.",
+    longDescription: "A comprehensive task management application that helps users organize their daily activities efficiently. Features include task creation, editing, deletion, priority levels, due date tracking, and category organization.",
+    tech: ["React Native", "JavaScript", "AsyncStorage"],
+    liveUrl: "https://your-todo-app.com",
+    githubUrl: "https://github.com/Pravalika/todo-app",
+    image: null,
+    featured: true,
+    gradient: "from-primary-400 to-primary-600",
+    bgPattern: "🗂️"
+  },
+  {
+    id: 2,
+    title: "Chat with Multiple PDFs",
+    category: "Python Project",
+    categoryIcon: "🐍",
+    categoryColor: "from-primary-600 to-primary-800",
+    description: "An AI-powered application that lets you upload multiple PDFs and have a natural conversation with them. Uses LangChain and OpenAI to extract and query document content intelligently.",
+    longDescription: "This Python project leverages LangChain, FAISS vector store, and OpenAI embeddings to create a conversational interface for multiple PDF documents. Users can ask questions and get contextually accurate answers from across all uploaded documents.",
+    tech: ["Python", "LangChain", "OpenAI", "FAISS", "Streamlit"],
+    liveUrl: "https://your-pdf-chat.streamlit.app",
+    githubUrl: "https://github.com/Pravalika/chat-pdf",
+    image: null,
+    featured: true,
+    gradient: "from-primary-500 to-primary-700",
+    bgPattern: "📄"
+  },
+  {
+    id: 3,
+    title: "Virtual Shopping Assistant",
+    category: "Full Stack MERN",
+    categoryIcon: "🛒",
+    categoryColor: "from-primary-500 to-primary-700",
+    description: "A full-stack MERN e-commerce application with an AI-powered virtual shopping assistant that provides personalized product recommendations and helps users find what they need.",
+    longDescription: "Built with MongoDB, Express.js, React, and Node.js, this virtual shopping assistant uses AI to understand user preferences and recommend products. Features include user authentication, product catalog, cart management, and an intelligent chatbot assistant.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    liveUrl: "https://your-shopping-assistant.com",
+    githubUrl: "https://github.com/Pravalika/virtual-shopping",
+    image: null,
+    featured: true,
+    gradient: "from-primary-400 to-primary-600",
+    bgPattern: "🛍️"
+  }
+];
